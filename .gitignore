@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+
+# Native
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# Debug logs
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+*.backup
+
+
+# Development configuration
+Backend/appsettings.Development.json
+
+# Temporary repair scripts
+Backend/fix_*.ps1
+
+# Build output
+Backend/bin/
+Backend/obj/
+
+# Backup files
+*.backup
+
+# Local nested copy and audit artifacts
+/c/
+/project-audit.txt
+/Check-Project.ps1

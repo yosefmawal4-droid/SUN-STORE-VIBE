@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SUN POWER | Engineering Smarter Energy Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#351000",
+                        "secondary-container": "#e2dfde",
+                        "primary-container": "#ff6b00",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-tint": "#a04100",
+                        "surface-variant": "#e4e2e2",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-tertiary-container": "#2f3132",
+                        "on-surface": "#1b1c1c",
+                        "outline": "#8e7164",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary": "#a04100",
+                        "on-secondary-container": "#636262",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary-container": "#989999",
+                        "surface-container-low": "#f5f3f3",
+                        "outline-variant": "#e2bfb0",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed-variant": "#7a3000",
+                        "background": "#fbf9f8",
+                        "surface-container-high": "#e9e8e7",
+                        "surface-container": "#efeded",
+                        "tertiary": "#5d5f5f",
+                        "on-surface-variant": "#5a4136",
+                        "on-primary-container": "#572000",
+                        "inverse-on-surface": "#f2f0f0",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-secondary-fixed-variant": "#474746",
+                        "inverse-surface": "#303031",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf9f8",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#ffdbcc",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-background": "#1b1c1c",
+                        "on-error": "#ffffff",
+                        "surface": "#fbf9f8",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb693",
+                        "surface-container-highest": "#e4e2e2",
+                        "inverse-primary": "#ffb693",
+                        "surface-dim": "#dbdad9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px",
+                        "base": "8px",
+                        "max-width": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-display": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-display": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Grid backgrounds */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+        }
+        .dark .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md dark:bg-inverse-surface/90 border-b border-outline-variant dark:border-outline shadow-sm transition-all duration-300 ease-in-out" id="main-nav">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<div class="flex items-center gap-4">
+<img alt="SUN POWER Logo" class="h-10 w-auto rounded-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5ckaFIv2M8br-UkWcXD3HSA6D5WY4N8ppMU5sTRG6MiElnx4tjVbhSK5WQt2_wFZ5ICAObtHpo_IcnwBHJ79NHF9317ywr-Pie3AQYUYBwCeeX0lF9BKIHElT4-3XDcZfJYH4t7IGaKFsHeJvGCXhT5MlAC9bnFJbTAwLWXOlylSViB6f90-SNWR16js9iSqvAamY4X0JplXI6KuWAdDIIIHV2pnUNVI_L-VU4pn_xI6HNgF2GZtY"/>
+<a class="font-headline-md text-headline-md font-black tracking-tighter text-on-surface dark:text-inverse-on-surface" href="#">SUN POWER</a>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="font-body-md text-body-md font-bold uppercase tracking-wider text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#technology">Technology</a>
+<a class="font-body-md text-body-md font-bold uppercase tracking-wider text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#process">Process</a>
+<a class="font-body-md text-body-md font-bold uppercase tracking-wider text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="font-body-md text-body-md font-bold uppercase tracking-wider text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors" href="#services">Services</a>
+</div>
+<div class="hidden md:flex">
+<a class="bg-primary-container text-on-primary-container px-6 py-3 rounded font-label-caps text-label-caps uppercase hover:opacity-80 transition-opacity flex items-center gap-2" href="#contact">
+                    Start Your Project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0 bg-inverse-surface">
+<div class="absolute inset-0 bg-cover bg-center opacity-40" data-alt="A striking landscape showcasing a massive solar panel installation across rolling hills in the foreground. In the background, stark silhouettes of ancient ruins and a castle structure are set against a bright, hazy sky. The foreground is overlaid with glowing, technical engineering blueprints and circuit diagrams in cyan and yellow, creating a juxtaposition between ancient history, raw nature, and advanced modern technology. The mood is epic and forward-looking." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJG7DHZKynzt1xhOGBbd7K5Za_7IBUjjVcSna6mJxULXm65YJFmjdSxxbw5OuHBoYgTuI99AlKt8nOzRLZnRFqbmJ68yJ4n2Kj_Tkau-DHLBm-1FIlFCzzLJIaQ71FoVDa09FuBaNdhlvtMS3b_JKEbt_aQEI2XCtU2ftlZU0yEvz9l6ZNUt9hou0AMctOW5MzURCiSYQSQ2gO_LPOHrSVBw563uVGZyfTLzJpsMeB2h1v4zOmL4ss')"></div>
+
+</div>
+<div class="relative z-10 max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 text-white">
+<div class="mb-6 inline-flex items-center gap-2 px-4 py-2 border border-outline/30 bg-surface/10 backdrop-blur-sm rounded-full">
+<span class="material-symbols-outlined text-primary-container text-sm">precision_manufacturing</span>
+<span class="font-label-caps text-label-caps text-primary-fixed uppercase tracking-widest">Founded 2021 | Al-Suwayda &amp; Damascus</span>
+</div>
+<h1 class="font-headline-display text-[48px] md:text-[72px] leading-tight md:leading-[80px] font-black tracking-tighter mb-6 text-on-primary">
+                    Engineering <span class="text-primary-container">Smarter</span><br/>Energy Solutions.
+                </h1>
+<p class="font-body-lg text-body-lg text-tertiary-fixed mb-8 max-w-2xl border-l-2 border-primary-container pl-6">
+                    From meticulous study and precision design to expert installation, diligent maintenance, and unwavering long-term support. Operating under the rigorous standards of Inter World for Engineering Contracting.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-primary-container text-on-primary-container px-8 py-4 rounded font-label-caps text-label-caps uppercase text-center hover:bg-surface-tint transition-colors flex items-center justify-center gap-2" href="#services">
+                        Explore Our Services
+                    </a>
+<a class="bg-transparent border-2 border-secondary-container text-on-primary px-8 py-4 rounded font-label-caps text-label-caps uppercase text-center hover:bg-secondary-container/10 transition-colors flex items-center justify-center gap-2" href="#contact">
+                        Start Your Project <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</header>
+<!-- 1. About Sun Power -->
+<section class="py-20 bg-surface text-on-surface border-b border-surface-variant" id="about">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-gutter items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6">About Sun Power</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
+                Sun Power is a leading solar engineering company specializing in delivering smarter energy solutions. Founded in 2021 in Al-Suwayda and Damascus, we operate under the rigorous standards of Inter World for Engineering Contracting.
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                We combine meticulous study, precision design, and expert installation to provide sustainable energy systems for residential, commercial, and industrial applications.
+            </p>
+</div>
+<div class="bg-surface-container rounded-xl overflow-hidden aspect-video relative">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5ckaFIv2M8br-UkWcXD3HSA6D5WY4N8ppMU5sTRG6MiElnx4tjVbhSK5WQt2_wFZ5ICAObtHpo_IcnwBHJ79NHF9317ywr-Pie3AQYUYBwCeeX0lF9BKIHElT4-3XDcZfJYH4t7IGaKFsHeJvGCXhT5MlAC9bnFJbTAwLWXOlylSViB6f90-SNWR16js9iSqvAamY4X0JplXI6KuWAdDIIIHV2pnUNVI_L-VU4pn_xI6HNgF2GZtY')"></div>
+</div>
+</div>
+</section>
+<!-- 2. Why Choose Us -->
+<section class="py-20 bg-surface-container-low text-on-surface border-b border-surface-variant" id="why-choose-us">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg mb-4">Why Choose Us</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">We stand out through our commitment to engineering excellence and long-term reliability.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<div class="group bg-surface rounded-xl p-8 border border-outline-variant hover:border-primary-container hover:-translate-y-2 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform duration-300">engineering</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">Engineering Precision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Every system is custom-designed based on rigorous load studies and site analysis.</p>
+</div>
+<div class="group bg-surface rounded-xl p-8 border border-outline-variant hover:border-primary-container hover:-translate-y-2 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform duration-300">verified</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">Premium Quality</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We source only Tier 1 components verified for long-term performance and durability.</p>
+</div>
+<div class="group bg-surface rounded-xl p-8 border border-outline-variant hover:border-primary-container hover:-translate-y-2 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform duration-300">support_agent</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-3">Unwavering Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive after-sales service and diligent maintenance for the lifetime of your system.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Our Engineering Process -->
+<section class="py-20 bg-surface text-on-surface border-b border-surface-variant" id="process">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Our Engineering Process</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A systematic approach to guarantee optimal performance and longevity.</p>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center relative">
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-outline-variant -z-10 -translate-y-1/2"></div>
+<div class="flex flex-row md:flex-col items-center gap-4 md:gap-2 mb-8 md:mb-0 bg-surface md:px-4 z-10 w-full md:w-auto">
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-md shadow-sm shrink-0">1</div>
+<div class="md:text-center">
+<h3 class="font-label-caps text-label-caps uppercase text-primary-container">Study</h3>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center gap-4 md:gap-2 mb-8 md:mb-0 bg-surface md:px-4 z-10 w-full md:w-auto">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border-2 border-primary-container text-primary-container flex items-center justify-center font-headline-md shadow-sm shrink-0">2</div>
+<div class="md:text-center">
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Design</h3>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center gap-4 md:gap-2 mb-8 md:mb-0 bg-surface md:px-4 z-10 w-full md:w-auto">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border-2 border-primary-container text-primary-container flex items-center justify-center font-headline-md shadow-sm shrink-0">3</div>
+<div class="md:text-center">
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Supply</h3>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center gap-4 md:gap-2 mb-8 md:mb-0 bg-surface md:px-4 z-10 w-full md:w-auto">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border-2 border-primary-container text-primary-container flex items-center justify-center font-headline-md shadow-sm shrink-0">4</div>
+<div class="md:text-center">
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Installation</h3>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center gap-4 md:gap-2 mb-8 md:mb-0 bg-surface md:px-4 z-10 w-full md:w-auto">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border-2 border-primary-container text-primary-container flex items-center justify-center font-headline-md shadow-sm shrink-0">5</div>
+<div class="md:text-center">
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Testing</h3>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center gap-4 md:gap-2 mb-0 bg-surface md:px-4 z-10 w-full md:w-auto">
+<div class="w-12 h-12 rounded-full bg-surface-container-high border-2 border-primary-container text-primary-container flex items-center justify-center font-headline-md shadow-sm shrink-0">6</div>
+<div class="md:text-center">
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Support</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Our Services -->
+<section class="py-20 bg-surface-container-low text-on-surface border-b border-surface-variant" id="services">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg mb-4">Our Services</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Comprehensive solutions tailored to your energy needs.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-gutter">
+<div class="bg-surface rounded-xl p-8 border border-outline-variant shadow-sm flex items-start gap-4">
+<span class="material-symbols-outlined text-3xl text-primary-container">solar_power</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Residential Systems</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Reliable power for homes, ensuring uninterrupted energy supply.</p>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-8 border border-outline-variant shadow-sm flex items-start gap-4">
+<span class="material-symbols-outlined text-3xl text-primary-container">domain</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Commercial Installations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Scalable solutions for businesses to reduce operational costs.</p>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-8 border border-outline-variant shadow-sm flex items-start gap-4">
+<span class="material-symbols-outlined text-3xl text-primary-container">factory</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Industrial Solar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Heavy-duty implementations for manufacturing and large-scale facilities.</p>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-8 border border-outline-variant shadow-sm flex items-start gap-4">
+<span class="material-symbols-outlined text-3xl text-primary-container">water_drop</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Solar Pumping</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Efficient agricultural water solutions powered by the sun.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Large Projects (Dark Premium Section) -->
+<section class="py-24 bg-inverse-surface text-inverse-on-surface border-b border-outline" id="projects">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<h2 class="font-headline-lg text-headline-lg mb-6 text-on-primary">Large Scale Projects</h2>
+<p class="font-body-lg text-body-lg text-tertiary-fixed mb-12 max-w-3xl mx-auto">We have successfully executed and commissioned numerous high-capacity installations across the region, delivering consistent power and substantial ROI for our clients.</p>
+<div class="grid md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest/10 rounded-xl overflow-hidden aspect-video relative group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5ckaFIv2M8br-UkWcXD3HSA6D5WY4N8ppMU5sTRG6MiElnx4tjVbhSK5WQt2_wFZ5ICAObtHpo_IcnwBHJ79NHF9317ywr-Pie3AQYUYBwCeeX0lF9BKIHElT4-3XDcZfJYH4t7IGaKFsHeJvGCXhT5MlAC9bnFJbTAwLWXOlylSViB6f90-SNWR16js9iSqvAamY4X0JplXI6KuWAdDIIIHV2pnUNVI_L-VU4pn_xI6HNgF2GZtY')"></div>
+<div class="absolute inset-0 bg-black/40 flex items-end p-6">
+<h3 class="font-headline-md text-headline-md text-white">Industrial Complex Mega-Array</h3>
+</div>
+</div>
+<div class="bg-surface-container-lowest/10 rounded-xl overflow-hidden aspect-video relative group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJG7DHZKynzt1xhOGBbd7K5Za_7IBUjjVcSna6mJxULXm65YJFmjdSxxbw5OuHBoYgTuI99AlKt8nOzRLZnRFqbmJ68yJ4n2Kj_Tkau-DHLBm-1FIlFCzzLJIaQ71FoVDa09FuBaNdhlvtMS3b_JKEbt_aQEI2XCtU2ftlZU0yEvz9l6ZNUt9hou0AMctOW5MzURCiSYQSQ2gO_LPOHrSVBw563uVGZyfTLzJpsMeB2h1v4zOmL4ss')"></div>
+<div class="absolute inset-0 bg-black/40 flex items-end p-6">
+<h3 class="font-headline-md text-headline-md text-white">Agricultural Pumping Station</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Quality and Value -->
+<section class="py-24 bg-primary-container text-on-primary-container text-center">
+<div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop">
+<span class="material-symbols-outlined text-5xl mb-6 opacity-80">format_quote</span>
+<h2 class="font-headline-lg text-[32px] md:text-[48px] leading-tight font-black tracking-tighter mb-8">
+            We do not compete by offering the lowest price.<br/>We compete by delivering the right solution.
+        </h2>
+<p class="font-body-lg text-body-lg font-semibold uppercase tracking-widest text-on-primary-fixed">The Sun Power Promise</p>
+</div>
+</section>
+<!-- 7. After-Sales Support -->
+<section class="py-20 bg-surface text-on-surface border-b border-surface-variant">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<div class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-6 text-primary-container">
+<span class="material-symbols-outlined text-3xl">handshake</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-6">Unmatched After-Sales Support</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+                Our relationship doesn't end at installation. We provide continuous monitoring, diligent maintenance, and rapid response to ensure your investment operates at peak efficiency for decades.
+            </p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Routine Maintenance Checks</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Performance Monitoring</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary">check_circle</span> Swift Technical Intervention</li>
+</ul>
+</div>
+<div class="md:w-1/2 w-full">
+<div class="bg-surface-container-high rounded-xl aspect-square flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-9xl text-outline-variant/50">support_agent</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. Smart and Advanced Solutions & 9. Vision and Mission -->
+<section class="py-20 bg-surface-container-low text-on-surface border-b border-surface-variant">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-gutter">
+<div class="bg-surface p-10 rounded-xl border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-4">memory</span>
+<h3 class="font-headline-lg text-headline-md mb-4">Smart Solutions</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                We integrate the latest advancements in smart grid technology, storage systems, and AI-driven monitoring to maximize yield and optimize consumption patterns.
+            </p>
+</div>
+<div class="bg-surface p-10 rounded-xl border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-4">public</span>
+<h3 class="font-headline-lg text-headline-md mb-4">Vision &amp; Mission</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+<strong>Vision:</strong> To be the definitive leader in reliable, engineered solar power across the region.
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+<strong>Mission:</strong> To provide sustainable energy independence through uncompromised engineering quality and exceptional service.
+            </p>
+</div>
+</div>
+</section>
+<!-- 10. Final CTA -->
+<section class="py-24 bg-surface text-center border-b border-surface-variant" id="contact">
+<div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop">
+<h2 class="font-headline-display text-[40px] md:text-[56px] leading-tight font-black tracking-tighter mb-6">Ready to power your future?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">Contact our engineering team today for a comprehensive consultation and site evaluation.</p>
+<a class="inline-flex bg-primary-container text-on-primary-container px-10 py-5 rounded font-label-caps text-label-caps uppercase hover:bg-surface-tint transition-colors items-center justify-center gap-3 text-lg" href="mailto:info@sunpower.com">
+            Request an Engineering Study <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-20 bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline dark:border-outline-variant">
+<div class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div>
+<a class="font-headline-md text-headline-md text-on-primary block mb-4" href="#">SUN POWER</a>
+<p class="font-label-caps text-label-caps text-tertiary-fixed-dim">
+                    © 2024 SUN POWER Solar Engineering. In partnership with Inter World for Engineering Contracting.
+                </p>
+</div>
+<div class="flex flex-wrap gap-6 md:justify-end">
+<a class="font-label-caps text-label-caps text-tertiary-fixed-dim dark:text-tertiary hover:text-white transition-colors hover:underline" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-tertiary-fixed-dim dark:text-tertiary hover:text-white transition-colors hover:underline" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-tertiary-fixed-dim dark:text-tertiary hover:text-white transition-colors hover:underline" href="#">Engineering Standards</a>
+<a class="font-label-caps text-label-caps text-tertiary-fixed-dim dark:text-tertiary hover:text-white transition-colors hover:underline" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple nav scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-surface/90', 'bg-surface');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.replace('bg-surface', 'bg-surface/90');
+            }
+        });
+    </script>
+</body></html>
